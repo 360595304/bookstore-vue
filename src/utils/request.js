@@ -4,7 +4,8 @@ import NProgress from 'nprogress'
 import store from '../store'
 
 const request = axios.create({
-  baseURL: 'http://127.0.0.1:8088'
+  // baseURL: 'http://127.0.0.1:8088'
+  baseURL: 'http://122.112.187.250:8088'
 })
 
 // 请求拦截

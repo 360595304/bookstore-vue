@@ -14,6 +14,7 @@ import SearchBook from "@/pages/SearchBook";
 import Pay from "@/pages/Pay";
 import Payment from "@/pages/Payment";
 import PaySuccess from "@/pages/PaySuccess";
+import Registered from "@/pages/Registered";
 // const originalPush = VueRouter.prototype.push
 //
 // VueRouter.prototype.push = function push(location) {
@@ -31,6 +32,10 @@ const routes = [
     {
         path: '/',
         component: Index,
+    },
+    {
+        path: "/registered",
+        component: Registered
     },
     {
         path: '/pay',

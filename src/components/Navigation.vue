@@ -2,13 +2,14 @@
   <div>
     <div style="z-index: 0; float:left; height: 50px;">
       <router-link to="/">
-        <img src="http://localhost:8088/img/logo.jpg" alt="LOGO">
+        <img src="http://localhost:8088/img/logo.png" alt="LOGO">
       </router-link>
     </div>
     <div class="top">
       <router-link to="/login" v-show="!isLogin">
         登陆
       </router-link>
+      <span @click="logout" v-show="isLogin">注销</span>
       <span>&nbsp;</span>
       <router-link to="/cart" v-show="isLogin">
         购物车
@@ -18,22 +19,13 @@
         <i class="fa fa-user fa-2x"> </i>
       </router-link>
       <span>&nbsp;</span>
-      <a href="#">
-        <i class="fa fa-bell fa-2x"> </i>
-      </a>
-      <span>&nbsp;</span>
-      <a href="#">
-        <i class="fa fa-phone fa-2x"> </i>
-      </a>
-      <span>&nbsp;</span>
-      <a href="#">
-        <i class="fa fa-cog fa-2x"> </i>
-      </a>
     </div>
   </div>
 </template>
 
 <script>
+import {doLogout} from "@/api/login";
+
 export default {
   name: "Navigation",
   data(){
@@ -43,6 +35,19 @@ export default {
   },
   created() {
     this.isLogin = sessionStorage.getItem("isLogin")
+  },
+  methods:{
+    logout(){
+      doLogout().then(res=>{
+        if (res.code !== 200) {
+          return this.$message.error(res.message)
+        }
+        this.$message.success(res.message)
+        sessionStorage.clear()
+        this.$router.push("/")
+
+      })
+    }
   }
 }
 </script>

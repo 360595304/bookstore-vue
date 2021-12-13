@@ -3,9 +3,9 @@
   <div class="login_container">
     <!--登录区域-->
     <div class="login_box">
-
-      <!--            <div>请登录</div>-->
-      <!--表单-->
+      <div class="msg">
+        <h2 style="color: #007aff;margin-top: 20px">欢迎登陆网上书店</h2>
+      </div>
       <el-form :model="loginForm" :rules="loginRules" ref="loginForm" label-width="0px" class="login_form">
         <el-form-item prop="username">
           <el-input v-model="loginForm.username" placeholder="请输入用户名称" prefix-icon="el-icon-user-solid"></el-input>
@@ -14,13 +14,8 @@
           <el-input v-model="loginForm.password" placeholder="请输入登录密码" prefix-icon="el-icon-lock"
                     type="password"></el-input>
         </el-form-item>
-        <!--<el-form-item prop="verifyCode">
-            <div class="verifyCode_box">
-                <el-input v-model="loginForm.verifyCode" placeholder="请输入手机验证码" prefix-icon="el-icon-mobile" class="verifyCode"></el-input>
-                <img src="../assets/img/msFXK1.gif" alt="" class="verifyCode_img">
-            </div>
-        </el-form-item>-->
         <el-form-item class="login_btn">
+          <router-link to="registered"><div style="margin-right: 100px;float: left">还没有账号？点击注册</div></router-link>
           <el-button type="primary" @click="submitForm('loginForm')">登 录</el-button>
           <el-button @click="resetForm('loginForm')">重置</el-button>
         </el-form-item>
@@ -105,8 +100,7 @@ export default {
 
 .login_box {
   width: 450px;
-  height: 380px;
-  //background-color: #FFFFFF;
+  height: 280px;
   border-radius: 3px;
   position: absolute;
   left: 50%;

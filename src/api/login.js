@@ -25,9 +25,8 @@ export function signUp(userObj) {
   return instance({
     url: '/users/add',
     method: 'POST',
-    params:{
-      userObj
-    }
+    data: userObj
+
   })
 }
 
