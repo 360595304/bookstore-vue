@@ -6,11 +6,15 @@
       </router-link>
     </div>
     <div class="top">
-      <router-link to="/login">
+      <router-link to="/login" v-show="!isLogin">
         登陆
       </router-link>
       <span>&nbsp;</span>
-      <router-link to="/home">
+      <router-link to="/cart" v-show="isLogin">
+        购物车
+      </router-link>
+      <span>&nbsp;</span>
+      <router-link to="/home" v-show="isLogin">
         <i class="fa fa-user fa-2x"> </i>
       </router-link>
       <span>&nbsp;</span>
@@ -31,7 +35,15 @@
 
 <script>
 export default {
-  name: "Navigation"
+  name: "Navigation",
+  data(){
+    return{
+      isLogin: false
+    }
+  },
+  created() {
+    this.isLogin = sessionStorage.getItem("isLogin")
+  }
 }
 </script>
 

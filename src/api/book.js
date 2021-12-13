@@ -1,15 +1,13 @@
 import instance from '../utils/request'
-export function getBookList(current, size, map) {
+
+export function getList(current, size, key) {
     return instance({
-        url: '/book/getBookList',
-        method: 'POST',
+        url: '/book/getList/' + key,
+        method: 'GET',
         params: {
             current,
             size
-        },
-        headers: {'Content-Type': 'application/json;charset=UTF-8'},
-        data: map
-
+        }
     })
 }
 
@@ -36,5 +34,41 @@ export function addBook(newBook) {
         method: 'POST',
         headers: {'Content-Type': 'application/json;charset=UTF-8'},
         data: newBook
+    })
+}
+
+
+export function getBook(bookId) {
+    return instance({
+        url: '/book/getBook/' + bookId,
+        method: 'GET',
+    })
+}
+
+export function getRecommendedBook(num) {
+    return instance({
+        url: '/book/getRecommendedBook/' + num,
+        method: 'GET',
+    })
+}
+
+export function getNewBook(num) {
+    return instance({
+        url: '/book/getNewBook/' + num,
+        method: 'GET',
+    })
+}
+
+export function getHotBook(num) {
+    return instance({
+        url: '/book/getHotBook/' + num,
+        method: 'GET',
+    })
+}
+
+export function getSimilarBook(type) {
+    return instance({
+        url: '/book/getSimilarBook/' + type,
+        method: 'GET',
     })
 }

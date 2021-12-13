@@ -1,6 +1,15 @@
 <template>
   <div>
-    <Search/>
+    <div id="search">
+      <div class="s1">
+        <div style="margin: auto">
+          <el-input type="text" v-model="key" placeholder="请输入您要搜索的内容..." style="width: 350px"/>
+          <router-link tag="a" target="_blank" :to="{path:'/search',query:{key:key}}">
+            <el-button type="primary">搜索</el-button>
+          </router-link>
+        </div>
+      </div>
+    </div>
     <Shuffling/>
     <div class="main">
       <Primary/>
@@ -32,6 +41,11 @@ export default {
     HotAuthor,
     NewBook,
     Navigation, Search, Shuffling, Primary, Recommend
+  },
+  data() {
+    return {
+      key: ''
+    }
   }
 }
 
@@ -45,10 +59,18 @@ export default {
   margin: 40px 100px;
 }
 
-.rebang {
-  height: 600px;
-  width: 100px;
-  margin: 0 auto;
+#search {
+  width: 100%;
+  height: 50px;
+  margin: 10px auto;
+}
+
+.s1 {
+  padding: 30px 0;
+  margin-top: 50px;
+  float: left;
+  text-align: center;
+  width: 100%;
 }
 
 .rebang th, td {

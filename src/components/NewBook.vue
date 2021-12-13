@@ -4,7 +4,7 @@
       <h1 align="left">新书推荐</h1>
       <p align="right"><a href="#">查看更多</a></p>
       <hr color="red">
-      <BookList/>
+      <BookList :bookList="bookList"/>
     </div>
     <div class="new-book-list">
       <h1 align="center">新书榜</h1>
@@ -17,10 +17,24 @@
 <script>
 import BookList from "@/components/BookList";
 import BookPicList from "@/components/BookPicList";
+import {getNewBook} from "@/api/book";
 
 export default {
   name: "NewBook",
-  components: {BookPicList, BookList}
+  components: {BookPicList, BookList},
+  data(){
+    return {
+      bookList: null
+    }
+  },
+  created() {
+    getNewBook(12).then(res=>{
+      if (res.code !== 200) {
+        return this.$message.error("书籍获取失败:" + res.message);
+      }
+      this.bookList = res.data.bookList
+    })
+  }
 }
 </script>
 

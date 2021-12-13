@@ -4,7 +4,7 @@
       <table style="border-collapse: collapse; width: 80%;">
         <tr>
           <td>小说<br>
-            <a href="#">侦探</a> / <a href="#">悬疑</a> / <a href="#">推理</a>
+            <router-link to="/search?key=11" href="">侦探</router-link> / <a href="#">悬疑</a> / <a href="#">推理</a>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <a href="#">情感</a> / <a href="#">都市</a>
             &nbsp;&nbsp;

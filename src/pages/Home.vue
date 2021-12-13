@@ -1,80 +1,36 @@
 <template>
   <div class="height-width">
-    <div class="nav">
-      <div class="nav-left">
-        <div class="logo" title="logo"></div>
-        <div class="on-off"></div>
-      </div>
-      <div class="middle">
-        <input type="text" class="search">
-      </div>
-      <div class="other">
-        <div class="other-top">
-          <div class="user bgsize"></div>
-          <div class="help bgsize"></div>
-          <div class="shopping bgsize"></div>
-          <div class="servicer bgsize"></div>
-          <div class="set bgsize"></div>
-        </div>
-        <div class="QR-Code other-bottom"></div>
-      </div>
-    </div>
+<!--    <div class="nav">-->
+<!--      <div class="nav-left">-->
+<!--        <div class="logo" title="logo"></div>-->
+<!--        <div class="on-off"></div>-->
+<!--      </div>-->
+<!--      <div class="other">-->
+<!--        <div class="other-top">-->
+<!--          <div class="user bgsize"></div>-->
+<!--          <div class="help bgsize"></div>-->
+<!--          <div class="shopping bgsize"></div>-->
+<!--          <div class="servicer bgsize"></div>-->
+<!--          <div class="set bgsize"></div>-->
+<!--        </div>-->
+<!--        <div class="QR-Code other-bottom"></div>-->
+<!--      </div>-->
+<!--    </div>-->
     <div class="content">
       <div class="content-left">
         <div class="item">
-          账户信息
+          <router-link to="/home/u">账户信息</router-link>
         </div>
         <div class="item">
           <router-link to="/home/order">我的订单</router-link>
         </div>
         <div class="item">
-          浏览记录
+          <router-link to="/home/history">浏览记录</router-link>
         </div>
         <div class="item">
           <router-link to="/home/about">意见反馈</router-link>
         </div>
-<!--        <ul class="list">-->
-<!--          <li class="list-content">-->
-<!--            <div class="list-border">-->
-<!--              <a href=""><span>账户信息</span></a>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li class="list-content">-->
-<!--            <div>-->
-<!--              <router-link to="/home/order"><span>我的订单</span></router-link>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li class="list-content">-->
-<!--            <div>-->
-<!--              <a href=""><span>浏览记录</span></a>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--&lt;!&ndash;          <li class="list-content">&ndash;&gt;-->
-<!--&lt;!&ndash;            <div>&ndash;&gt;-->
-<!--&lt;!&ndash;              <a href=""><span>收藏中心</span></a>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;          </li>&ndash;&gt;-->
-<!--          <li class="list-content">-->
-<!--            <div>-->
-<!--              <a href=""><span>购买记录</span></a>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li class="list-content">-->
-<!--            <div>-->
-<!--              <a href=""><span>物流信息</span></a>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li class="list-content">-->
-<!--            <div>-->
-<!--              <a href=""><span>优惠券</span></a>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li class="list-content">-->
-<!--            <div>-->
-<!--              <router-link to="/home/about"><span>意见反馈</span></router-link>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--        </ul>-->
+
       </div>
       <div class="right">
         <router-view/>
@@ -232,6 +188,7 @@ input {
   float: left;
   margin-left: 100px;
   text-align: center;
+  width: 80%;
 }
 
 table {
